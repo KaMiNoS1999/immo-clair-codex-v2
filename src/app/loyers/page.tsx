@@ -16,7 +16,7 @@ export default function RentsPage() {
           <h2>Suivi des paiements</h2>
           <p>
             Une vue claire des montants attendus, reçus et restants à traiter.
-            Le bouton de paiement est visuel pour ce prototype.
+            Le suivi reste manuel dans cette version de démonstration.
           </p>
         </div>
       </section>
@@ -24,7 +24,7 @@ export default function RentsPage() {
       <section className="panel">
         <div className="section-heading">
           <h3>Historique récent</h3>
-          <span className="muted">Données mockées, sans connexion bancaire</span>
+          <span className="muted">Données de démonstration, sans connexion bancaire</span>
         </div>
         <div className="table-wrap">
           <table>
@@ -64,10 +64,10 @@ export default function RentsPage() {
                     <td>
                       <button
                         className="button button-secondary button-small"
-                        disabled={isPaid}
+                        disabled
                         type="button"
                       >
-                        {isPaid ? "Payé" : "Marquer comme payé"}
+                        {isPaid ? "Payé" : "Suivi manuel"}
                       </button>
                     </td>
                   </tr>
@@ -80,7 +80,7 @@ export default function RentsPage() {
 
       <section className="ai-panel">
         <p className="eyebrow">Copilote</p>
-        <h3>Analyse IA bientôt disponible</h3>
+        <h3>Synthèse assistée en préparation</h3>
         <p>
           L'objectif futur : détecter les retards, préparer un brouillon de
           relance et expliquer les écarts sans envoyer de message automatiquement.

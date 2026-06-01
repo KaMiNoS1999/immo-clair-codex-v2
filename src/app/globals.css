@@ -462,6 +462,15 @@ textarea {
   background: var(--primary-strong);
 }
 
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.button-primary:disabled:hover {
+  background: var(--primary);
+}
+
 .button-secondary {
   background: #ffffff;
   border-color: var(--line);
@@ -470,8 +479,6 @@ textarea {
 
 .button-secondary:disabled {
   color: var(--muted);
-  cursor: not-allowed;
-  opacity: 0.62;
 }
 
 .button-small {

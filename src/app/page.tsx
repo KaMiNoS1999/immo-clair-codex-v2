@@ -29,6 +29,10 @@ export default function DashboardPage() {
       reminder.status === "à faire" &&
       (reminder.priority === "haute" || reminder.priority === "urgente")
   );
+  const latePaymentDetail =
+    metrics.latePaymentCount > 1
+      ? `${metrics.latePaymentCount} paiements à traiter`
+      : `${metrics.latePaymentCount} paiement à traiter`;
 
   return (
     <div className="page-stack">
@@ -62,7 +66,7 @@ export default function DashboardPage() {
           value={formatCurrency(metrics.receivedRent)}
         />
         <MetricCard
-          detail={`${metrics.latePaymentCount} paiement(s) à traiter`}
+          detail={latePaymentDetail}
           label="Loyers en retard"
           tone="danger"
           value={formatCurrency(metrics.lateRent)}
@@ -219,7 +223,7 @@ export default function DashboardPage() {
 
         <article className="ai-panel">
           <p className="eyebrow">Copilote</p>
-          <h3>Analyse IA bientôt disponible</h3>
+          <h3>Synthèse assistée en préparation</h3>
           <p>
             Cet espace servira à générer des synthèses, brouillons de messages,
             alertes de documents et simulations. Rien ne sera envoyé sans

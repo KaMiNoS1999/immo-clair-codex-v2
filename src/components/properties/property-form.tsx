@@ -80,7 +80,7 @@ export function PropertyForm() {
         <label className="field field-wide">
           <span>Notes internes</span>
           <textarea
-            defaultValue="Ce formulaire est un brouillon local pour préparer la future création d'un bien."
+            defaultValue="Fiche préparée pour centraliser les informations administratives du bien."
             name="notes"
             rows={4}
           />
@@ -88,11 +88,11 @@ export function PropertyForm() {
       </div>
 
       <div className="form-actions">
-        <button className="button button-secondary" type="button">
-          Enregistrer en brouillon
+        <button className="button button-secondary" disabled type="button">
+          Brouillon non enregistré
         </button>
-        <button className="button button-primary" type="button">
-          Prévisualiser le bien
+        <button className="button button-primary" disabled type="button">
+          Prévisualisation à venir
         </button>
       </div>
     </form>

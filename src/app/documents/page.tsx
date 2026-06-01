@@ -57,7 +57,7 @@ export default function DocumentsPage() {
 
       <section className="ai-panel">
         <p className="eyebrow">Copilote</p>
-        <h3>Analyse IA bientôt disponible</h3>
+        <h3>Synthèse assistée en préparation</h3>
         <p>
           L'espace IA pourra plus tard repérer les pièces manquantes, extraire
           des dates clés et générer une checklist à valider par le propriétaire.

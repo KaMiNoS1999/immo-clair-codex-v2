@@ -8,8 +8,8 @@ export default function AddPropertyPage() {
           <p className="eyebrow">Nouveau bien</p>
           <h2>Ajouter un bien en brouillon</h2>
           <p>
-            Le formulaire prépare la future création d'un bien. Pour ce MVP,
-            aucune donnée n'est encore enregistrée côté serveur.
+            Préparez une fiche claire avec les informations administratives
+            utiles avant l'enregistrement définitif.
           </p>
         </div>
       </section>
@@ -18,7 +18,7 @@ export default function AddPropertyPage() {
 
       <section className="ai-panel">
         <p className="eyebrow">Copilote</p>
-        <h3>Analyse IA bientôt disponible</h3>
+        <h3>Synthèse assistée en préparation</h3>
         <p>
           Plus tard, ImmoClair pourra suggérer les documents à demander, les
           champs à vérifier et les rappels à créer à partir du profil du bien.

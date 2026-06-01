@@ -80,7 +80,7 @@ export default function WorksPage() {
 
       <section className="ai-panel">
         <p className="eyebrow">Copilote</p>
-        <h3>Analyse IA bientôt disponible</h3>
+        <h3>Synthèse assistée en préparation</h3>
         <p>
           Plus tard, ImmoClair pourra résumer les échanges, classer les photos,
           comparer devis et proposer une responsabilité probable à faire valider.

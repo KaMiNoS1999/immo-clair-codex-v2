@@ -20,7 +20,7 @@ export default function AssistantPage() {
       <section className="page-hero">
         <div>
           <p className="eyebrow">Assistant</p>
-          <h2>Analyse IA bient&ocirc;t disponible</h2>
+          <h2>Assistant de pr&eacute;paration</h2>
           <p>
             Cette page stabilise l&apos;emplacement du futur copilote. Les
             synth&egrave;ses et brouillons resteront toujours &agrave; valider
@@ -32,7 +32,10 @@ export default function AssistantPage() {
       <section className="three-column">
         <article className="ai-panel">
           <p className="eyebrow">Loyers</p>
-          <h3>{latePayments.length} point(s) &agrave; v&eacute;rifier</h3>
+          <h3>
+            {latePayments.length}{" "}
+            {latePayments.length > 1 ? "points" : "point"} &agrave; v&eacute;rifier
+          </h3>
           <p>
             Reste &agrave; suivre :{" "}
             {formatCurrency(
@@ -48,7 +51,10 @@ export default function AssistantPage() {
 
         <article className="ai-panel">
           <p className="eyebrow">Travaux</p>
-          <h3>{openWorkOrders.length} intervention(s) ouverte(s)</h3>
+          <h3>
+            {openWorkOrders.length}{" "}
+            {openWorkOrders.length > 1 ? "interventions ouvertes" : "intervention ouverte"}
+          </h3>
           <p>
             Les photos, devis et responsabilit&eacute;s probables seront
             analysables plus tard.
@@ -57,7 +63,10 @@ export default function AssistantPage() {
 
         <article className="ai-panel">
           <p className="eyebrow">Rappels</p>
-          <h3>{activeReminders.length} rappel(s) actif(s)</h3>
+          <h3>
+            {activeReminders.length}{" "}
+            {activeReminders.length > 1 ? "rappels actifs" : "rappel actif"}
+          </h3>
           <p>Prochaine date : {formatDate(activeReminders[0]?.dueDate)}.</p>
         </article>
       </section>
