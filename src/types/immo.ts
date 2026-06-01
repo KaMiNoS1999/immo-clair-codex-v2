@@ -37,6 +37,15 @@ export type DocumentType =
 
 export type DocumentStatus = "présent" | "manquant" | "expiré" | "à vérifier";
 
+export type DocumentSection =
+  | "critical"
+  | "review"
+  | "taxes"
+  | "maintenance"
+  | "archives";
+
+export type DocumentRiskLevel = "faible" | "moyen" | "élevé";
+
 export type ReminderPriority = "basse" | "moyenne" | "haute" | "urgente";
 
 export type ReminderStatus = "à faire" | "fait" | "ignoré";
@@ -121,6 +130,11 @@ export type Document = {
   type: DocumentType;
   title: string;
   status: DocumentStatus;
+  section: DocumentSection;
+  practicalUse: string;
+  riskLevel: DocumentRiskLevel;
+  recommendedAction: string;
+  critical?: boolean;
   uploadedAt?: string;
   dueDate?: string;
   fileName?: string;

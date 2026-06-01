@@ -195,6 +195,8 @@ textarea {
 .panel,
 .property-card,
 .document-card,
+.compliance-summary-card,
+.document-explainer article,
 .ai-panel,
 .form-panel {
   background: var(--surface);
@@ -367,6 +369,100 @@ textarea {
   color: var(--muted);
 }
 
+.documents-hero {
+  align-items: flex-start;
+}
+
+.document-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.document-compliance {
+  display: grid;
+  gap: 16px;
+}
+
+.document-context {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  max-width: 420px;
+  text-align: right;
+}
+
+.compliance-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.compliance-summary-card {
+  display: grid;
+  gap: 8px;
+  min-height: 132px;
+  padding: 18px;
+}
+
+.compliance-summary-card span,
+.compliance-summary-card small {
+  color: var(--muted);
+}
+
+.compliance-summary-card span {
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.compliance-summary-card strong {
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.compliance-summary-card[data-tone="good"] {
+  border-color: rgba(47, 125, 85, 0.32);
+}
+
+.compliance-summary-card[data-tone="warning"] {
+  border-color: rgba(217, 139, 53, 0.36);
+}
+
+.compliance-summary-card[data-tone="danger"] {
+  border-color: rgba(186, 63, 63, 0.34);
+}
+
+.document-sections {
+  display: grid;
+  gap: 28px;
+}
+
+.document-section {
+  display: grid;
+  gap: 14px;
+}
+
+.document-section-header {
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  padding-bottom: 12px;
+}
+
+.document-section-header h3 {
+  font-size: 1.18rem;
+  margin: 4px 0 0;
+}
+
+.document-section-header p:last-child {
+  color: var(--muted);
+  margin: 0;
+  max-width: 520px;
+}
+
 .property-list {
   display: grid;
   gap: 16px;
@@ -535,13 +631,119 @@ td strong,
 }
 
 .document-card {
+  display: grid;
+  gap: 16px;
   padding: 20px;
+}
+
+.document-checklist-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.document-card-top {
+  align-items: flex-start;
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+}
+
+.document-card-top h4 {
+  font-size: 1.08rem;
+  line-height: 1.25;
+  margin: 5px 0 0;
+}
+
+.document-badge-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.document-detail-grid {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding-top: 14px;
+}
+
+.document-detail-grid div {
+  min-width: 0;
+}
+
+.document-detail-grid dt {
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-bottom: 4px;
+}
+
+.document-detail-grid dd {
+  font-weight: 700;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.document-utility,
+.document-recommendation {
+  background: #f8faf9;
+  border: 1px solid rgba(223, 228, 234, 0.82);
+  border-radius: 8px;
+  display: grid;
+  gap: 5px;
+  padding: 12px;
+}
+
+.document-utility span,
+.document-recommendation span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.document-utility p,
+.document-recommendation p {
+  color: var(--ink);
+  margin: 0;
+}
+
+.document-card .button {
+  justify-self: start;
 }
 
 .mini-definition {
   display: grid;
   gap: 12px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+}
+
+.document-explainer {
+  display: grid;
+  gap: 14px;
+}
+
+.document-explainer-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.document-explainer article {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+}
+
+.document-explainer strong {
+  line-height: 1.25;
+}
+
+.document-explainer p {
+  color: var(--muted);
   margin: 0;
 }
 
@@ -619,14 +821,26 @@ td strong,
 
   .metric-grid,
   .three-column,
-  .document-strip {
+  .document-strip,
+  .compliance-grid,
+  .document-explainer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .two-column,
   .detail-grid,
-  .document-grid {
+  .document-grid,
+  .document-checklist-grid {
     grid-template-columns: 1fr;
+  }
+
+  .document-context {
+    text-align: left;
+  }
+
+  .document-section-header {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
@@ -644,11 +858,21 @@ td strong,
 
   .metric-grid,
   .document-strip,
+  .compliance-grid,
   .property-card-grid,
   .info-grid,
   .mini-definition,
+  .document-detail-grid,
+  .document-explainer-grid,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .document-actions,
+  .document-card-top,
+  .document-badge-stack {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .clean-list li {

@@ -150,6 +150,13 @@ export const documents: Document[] = [
     type: "bail",
     title: "Bail de résidence principale",
     status: "présent",
+    section: "critical",
+    practicalUse:
+      "Structure la relation locative, le loyer, les charges, la garantie et les dates clés.",
+    riskLevel: "faible",
+    recommendedAction:
+      "Conserver la version signée et vérifier que les annexes utiles sont classées.",
+    critical: true,
     uploadedAt: "2025-08-24",
     fileName: "bail-ixelles-2025.pdf"
   },
@@ -160,6 +167,13 @@ export const documents: Document[] = [
     type: "état des lieux",
     title: "Etat des lieux d'entrée",
     status: "présent",
+    section: "critical",
+    practicalUse:
+      "Sert de référence pour comparer l'état du logement au début et à la fin du bail.",
+    riskLevel: "faible",
+    recommendedAction:
+      "Garder le document signé avec ses photos ou annexes éventuelles.",
+    critical: true,
     uploadedAt: "2025-09-01",
     fileName: "etat-des-lieux-entree.pdf"
   },
@@ -169,6 +183,14 @@ export const documents: Document[] = [
     type: "PEB/EPC",
     title: "Certificat PEB",
     status: "présent",
+    section: "critical",
+    practicalUse:
+      "Documente la performance énergétique et peut influencer certaines informations locatives selon la région.",
+    riskLevel: "faible",
+    recommendedAction:
+      "Vérifier la durée de validité et conserver le certificat lié au bien.",
+    critical: true,
+    dueDate: "2034-11-16",
     uploadedAt: "2024-11-16",
     fileName: "peb-ixelles.pdf"
   },
@@ -179,6 +201,13 @@ export const documents: Document[] = [
     type: "preuve d'enregistrement",
     title: "Preuve d'enregistrement du bail",
     status: "manquant",
+    section: "critical",
+    practicalUse:
+      "Permet de suivre une obligation administrative importante liée au bail.",
+    riskLevel: "élevé",
+    recommendedAction:
+      "Récupérer la preuve ou vérifier la situation via une source officielle.",
+    critical: true,
     dueDate: "2026-06-15"
   },
   {
@@ -187,23 +216,28 @@ export const documents: Document[] = [
     type: "assurance",
     title: "Assurance incendie propriétaire",
     status: "à vérifier",
+    section: "review",
+    practicalUse:
+      "Aide à suivre la couverture du propriétaire et les garanties liées au bien.",
+    riskLevel: "moyen",
+    recommendedAction:
+      "Vérifier la police, la période couverte et les clauses utiles pour le bailleur.",
     dueDate: "2026-06-30"
   },
   {
-    id: "doc-invoice-boiler",
+    id: "doc-recourse",
     propertyId: "appartement-ixelles",
-    type: "facture",
-    title: "Facture entretien chaudière 2025",
-    status: "présent",
-    uploadedAt: "2025-04-14",
-    fileName: "facture-chaudiere-2025.pdf"
-  },
-  {
-    id: "doc-quote-plumber",
-    propertyId: "appartement-ixelles",
-    type: "devis",
-    title: "Devis plomberie cuisine",
-    status: "manquant"
+    leaseId: "bail-ixelles-2025",
+    type: "assurance",
+    title: "Abandon de recours ou assurance locataire",
+    status: "à vérifier",
+    section: "review",
+    practicalUse:
+      "Point d'attention utile pour comprendre qui est couvert et dans quelles limites.",
+    riskLevel: "moyen",
+    recommendedAction:
+      "Vérifier le bail et les attestations disponibles, selon la région et le type de bail.",
+    dueDate: "2026-07-10"
   },
   {
     id: "doc-tax",
@@ -211,9 +245,155 @@ export const documents: Document[] = [
     type: "document fiscal",
     title: "Précompte immobilier 2026",
     status: "manquant",
+    section: "taxes",
+    practicalUse:
+      "Taxe propriétaire à suivre annuellement pour garder une vision claire des charges.",
+    riskLevel: "moyen",
+    recommendedAction:
+      "Ajouter l'avis dès réception et reporter son impact dans le suivi financier.",
     dueDate: "2026-09-30"
+  },
+  {
+    id: "doc-annual-tax",
+    propertyId: "appartement-ixelles",
+    type: "document fiscal",
+    title: "Documents fiscaux annuels",
+    status: "à vérifier",
+    section: "taxes",
+    practicalUse:
+      "Rassemble les éléments utiles pour préparer le dossier fiscal annuel du propriétaire.",
+    riskLevel: "moyen",
+    recommendedAction:
+      "Préparer un dossier par année et valider les règles applicables avec une source officielle.",
+    dueDate: "2027-04-30"
+  },
+  {
+    id: "doc-invoice-boiler",
+    propertyId: "appartement-ixelles",
+    type: "facture",
+    title: "Facture entretien chaudière 2025",
+    status: "présent",
+    section: "maintenance",
+    practicalUse:
+      "Conserve la preuve d'un entretien et aide à suivre l'historique technique du logement.",
+    riskLevel: "faible",
+    recommendedAction:
+      "Classer avec les interventions liées et préparer le prochain justificatif.",
+    uploadedAt: "2025-04-14",
+    fileName: "facture-chaudiere-2025.pdf"
+  },
+  {
+    id: "doc-boiler-2026",
+    propertyId: "appartement-ixelles",
+    type: "facture",
+    title: "Attestation entretien chaudière 2026",
+    status: "à vérifier",
+    section: "maintenance",
+    practicalUse:
+      "Aide à suivre les obligations ou usages d'entretien applicables au logement.",
+    riskLevel: "moyen",
+    recommendedAction:
+      "Demander l'attestation au prestataire et vérifier ce qui s'applique au bien.",
+    dueDate: "2026-06-05"
+  },
+  {
+    id: "doc-quote-plumber",
+    propertyId: "appartement-ixelles",
+    type: "devis",
+    title: "Devis plomberie cuisine",
+    status: "manquant",
+    section: "maintenance",
+    practicalUse:
+      "Documente le coût prévu et garde une trace avant décision sur les travaux.",
+    riskLevel: "moyen",
+    recommendedAction:
+      "Demander le devis final ou classer la facture si l'intervention est réalisée.",
+    dueDate: "2026-06-20"
+  },
+  {
+    id: "doc-tax-archive-2025",
+    propertyId: "appartement-ixelles",
+    type: "document fiscal",
+    title: "Dossier fiscal propriétaire 2025",
+    status: "présent",
+    section: "archives",
+    practicalUse:
+      "Garde une trace annuelle des documents utiles au suivi financier et fiscal.",
+    riskLevel: "faible",
+    recommendedAction:
+      "Conserver l'archive et compléter le dossier 2026 au fil de l'année.",
+    uploadedAt: "2026-01-12",
+    fileName: "dossier-fiscal-2025.zip"
   }
 ];
+
+export const documentSections: Array<{
+  id: Document["section"];
+  title: string;
+  description: string;
+}> = [
+  {
+    id: "critical",
+    title: "Obligatoire / critique",
+    description:
+      "Les pièces structurantes du bail et les points administratifs à surveiller en priorité."
+  },
+  {
+    id: "review",
+    title: "À vérifier",
+    description:
+      "Les éléments à confirmer selon la région, le type de bail et les documents disponibles."
+  },
+  {
+    id: "taxes",
+    title: "Fiscalité & taxes",
+    description:
+      "Les documents propriétaires à suivre annuellement pour garder une vision claire."
+  },
+  {
+    id: "maintenance",
+    title: "Travaux & entretien",
+    description:
+      "Les factures, devis et preuves utiles pour l'historique technique du logement."
+  },
+  {
+    id: "archives",
+    title: "Archives présentes",
+    description:
+      "Les documents déjà classés qui serviront de référence pour les périodes suivantes."
+  }
+];
+
+export function getDocumentsBySection(section: Document["section"]): Document[] {
+  return documents.filter((document) => document.section === section);
+}
+
+export function getDocumentComplianceSummary() {
+  const presentCount = documents.filter(
+    (document) => document.status === "présent"
+  ).length;
+  const missingCount = documents.filter(
+    (document) =>
+      document.status === "manquant" || document.status === "expiré"
+  ).length;
+  const criticalPointCount = documents.filter(
+    (document) => document.riskLevel === "élevé" && document.status !== "présent"
+  ).length;
+  const nextDueDocument = documents
+    .filter((document) => document.dueDate && document.status !== "présent")
+    .sort((first, second) =>
+      String(first.dueDate).localeCompare(String(second.dueDate))
+    )[0];
+  const completenessScore = Math.round((presentCount / documents.length) * 100);
+
+  return {
+    presentCount,
+    missingCount,
+    criticalPointCount,
+    nextDueDocument,
+    completenessScore
+  };
+}
 
 export const reminders: Reminder[] = [
   {
