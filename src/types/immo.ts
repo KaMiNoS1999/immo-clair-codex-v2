@@ -164,3 +164,57 @@ export type InvestmentSimulation = {
   estimatedGrossYieldPercent: number;
   assumptions: string[];
 };
+
+export type RentalDossierRegion = "Bruxelles" | "Wallonie" | "Flandre";
+
+export type RentalDossierPropertyType =
+  | "appartement"
+  | "maison"
+  | "kot"
+  | "autre";
+
+export type GuaranteeStatus = "oui" | "non" | "partielle";
+
+export type LocalDocumentAnswer = "oui" | "non";
+
+export type LocalDocumentReviewAnswer = "oui" | "non" | "a verifier";
+
+export type UrgentWorkPriority = "faible" | "moyenne" | "urgente";
+
+export type LocalRentalDossier = {
+  id: string;
+  createdAt: string;
+  property: {
+    name: string;
+    address: string;
+    municipality: string;
+    region: RentalDossierRegion;
+    type: RentalDossierPropertyType;
+  };
+  tenant: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone?: string;
+  };
+  rent: {
+    monthlyRent: number;
+    monthlyCharges: number;
+    dueDay: number;
+    leaseStartDate: string;
+    guaranteeAmount: number;
+    guaranteeStatus: GuaranteeStatus;
+  };
+  documents: {
+    signedLease: LocalDocumentAnswer;
+    entryConditionReport: LocalDocumentAnswer;
+    epcAvailable: LocalDocumentAnswer;
+    leaseRegistered: LocalDocumentReviewAnswer;
+    ownerFireInsurance: LocalDocumentReviewAnswer;
+  };
+  urgentWorks: {
+    none: boolean;
+    description?: string;
+    priority: UrgentWorkPriority;
+  };
+};

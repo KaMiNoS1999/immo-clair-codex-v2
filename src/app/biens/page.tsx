@@ -1,3 +1,4 @@
+import { LocalPropertyList } from "@/components/properties/local-property-list";
 import { PropertyCard } from "@/components/properties/property-card";
 import { ButtonLink } from "@/components/ui/button-link";
 import { getActiveLease, getTenant, properties } from "@/data/mock-data";
@@ -16,6 +17,8 @@ export default function PropertiesPage() {
         </div>
         <ButtonLink href="/biens/ajouter">Ajouter un bien</ButtonLink>
       </section>
+
+      <LocalPropertyList />
 
       <section className="property-list">
         {properties.map((property) => {
